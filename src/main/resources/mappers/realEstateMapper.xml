@@ -15,13 +15,57 @@
  			,`type`
  			,`price`
  			,`rentPrice`
- 				,`createdAt`
+ 			,`createdAt`
  			,`updatedAt`
  		FROM
  			`real_estate`
  		WHERE
  			`id` = #{id}
  	</select>
- 
+ 	
+ 	<select id="selectgetRealEstateByRentPrice" parameterType="int"
+ 	resultType="com.syj.spring.test.mybatis.domain.RealEstate">
+ 		SELECT
+ 			`id`
+ 			,`realtorId`
+ 			,`address`
+ 			,`area`
+ 			,`type`
+ 			,`price`
+ 			,`rentPrice`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`real_estate`
+ 		WHERE
+ 			<![CDATA[
+ 			`type` = '월세'
+ 			AND `rentPrice` < #{rentPrice}
+ 			]]>
+ 	</select>
+ 	
+ 	<select id="selectRealEstateByAreaAndPrice" parameterType="map"
+ 	resultType="com.syj.spring.test.mybatis.domain.RealEstate">
+	 	SELECT
+	 			`id`
+	 			,`realtorId`
+	 			,`address`
+	 			,`area`
+	 			,`type`
+	 			,`price`
+	 			,`rentPrice`
+	 			,`createdAt`
+	 			,`updatedAt`
+	 		FROM
+	 			`real_estate`
+	 		WHERE
+	 			<![CDATA[
+	 			`type` = '월세'
+	 			AND `area` >= #{area}
+	 			AND `price` <= #{price}
+	 		ORDER BY
+	 			${createdAt DESC}
+	 			]]>
+ 	</select>
  
  </mapper>
