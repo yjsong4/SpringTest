@@ -68,4 +68,65 @@
 	 			]]>
  	</select>
  
+ 	<insert id="insertRealEstateByObject"
+ 	parameterType="com.syj.spring.test.mybatis.domain.RealEstate">
+ 		INSERT INTO
+ 			`real_estate`
+ 		(
+ 			`realtorId`
+ 			, `address`
+ 			, `area`
+ 			, `type`
+ 			, `price`
+ 			, `rentPrice`
+ 		)
+ 		VALUE
+ 		(
+ 			#{realtorId}
+ 			, #{address}
+ 			, #{area}
+ 			, #{type}
+ 			, #{price}
+ 			, #{rentPrice}
+ 		)
+ 	</insert>
+ 	
+ 	<insert id="insertRealEstate"
+ 	parameterType="map">
+ 	
+ 		INSERT INTO
+ 			`real_estate`
+ 		(
+ 			`realtorId`
+ 			, `address`
+ 			, `area`
+ 			, `type`
+ 			, `price`
+ 			, `rentPrice`
+ 		)
+ 		VALUE
+ 		(
+ 			#{realtorId}
+ 			, #{address}
+ 			, #{area}
+ 			, #{type}
+ 			, #{price}
+ 			, #{rentPrice}
+ 		)
+ 	
+ 	</insert>
+ 	
+ 	<update id="updateRealEstate"
+ 	parameterType="map">
+ 		UPDATE
+ 			`real_estate`
+ 		SET
+ 			`type` = #{type}
+ 			`price` = #{price}
+ 		WHERE
+ 			`id` = #{id}
+ 	</update>
+ 	
+ 	
+
  </mapper>
