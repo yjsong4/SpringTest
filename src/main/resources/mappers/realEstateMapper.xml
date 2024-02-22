@@ -116,7 +116,7 @@
  	
  	</insert>
  	
- 	<update id="updateRealEstate"
+ 	<update id="updateRealEstateById"
  	parameterType="map">
  		UPDATE
  			`real_estate`
@@ -127,6 +127,12 @@
  			`id` = #{id}
  	</update>
  	
+ 	<delete id="deleteReviewById"
+ 	parameterType="int">
+ 		DELETE
+	    FROM `real_estate`
+	    WHERE
+	        `id` = #{id}
+ 	</delete>
  	
-
  </mapper>

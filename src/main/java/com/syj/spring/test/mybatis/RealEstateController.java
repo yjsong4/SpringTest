@@ -71,12 +71,19 @@ public class RealEstateController {
 	@ResponseBody
 	public String updateRealEstateById(
 			@RequestParam("id") int id
-			, @RequestParam("id") int id
-			, @RequestParam("id") int id
+			, @RequestParam("type") String type
+			, @RequestParam("price") int price
 			) {
-		
+		int count = realEstateService.updateRealEstate(22, "전세", 70000);
+		return "업데이트 : " + count;
 	}
 	
-	
+	@RequestMapping("/delete")
+	@ResponseBody
+	public String deleteRealEstate(@RequestParam("id") int id) {
+		
+		int count = realEstateService.deleteRealEstate(id);
+		return "삭제 : " + count;
+	}
 	
 }
