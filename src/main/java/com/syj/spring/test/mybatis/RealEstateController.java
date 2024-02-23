@@ -69,13 +69,10 @@ public class RealEstateController {
 	
 	@RequestMapping("/update")
 	@ResponseBody
-	public String updateRealEstateById(
-			@RequestParam("id") int id
-			, @RequestParam("type") String type
-			, @RequestParam("price") int price
-			) {
+	public String updateRealEstate() {
+		
 		int count = realEstateService.updateRealEstate(22, "전세", 70000);
-		return "업데이트 : " + count;
+		return "수정 성공 : " + count;
 	}
 	
 	@RequestMapping("/delete")
@@ -83,7 +80,7 @@ public class RealEstateController {
 	public String deleteRealEstate(@RequestParam("id") int id) {
 		
 		int count = realEstateService.deleteRealEstate(id);
-		return "삭제 : " + count;
+		return "삭제 성공 : " + count;
 	}
 	
 }

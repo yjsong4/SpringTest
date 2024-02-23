@@ -116,21 +116,22 @@
  	
  	</insert>
  	
- 	<update id="updateRealEstateById"
+ 	<update id="updateRealEstate"
  	parameterType="map">
  		UPDATE
  			`real_estate`
  		SET
  			`type` = #{type}
- 			`price` = #{price}
+ 			, `price` = #{price}
+ 			, `updatedAt` = now()
  		WHERE
  			`id` = #{id}
  	</update>
  	
  	<delete id="deleteReviewById"
  	parameterType="int">
- 		DELETE
-	    FROM `real_estate`
+ 		DELETE FROM
+	    	`real_estate`
 	    WHERE
 	        `id` = #{id}
  	</delete>

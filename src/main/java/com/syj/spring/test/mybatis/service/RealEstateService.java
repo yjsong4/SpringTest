@@ -55,13 +55,13 @@ public class RealEstateService {
 			, String type
 			, int price) {
 		
-		int count = realEstateRepository.updateRealEstateById(id, type, price);
+		int count = realEstateRepository.updateRealEstate(id, type, price);
 		return count;
 	}
 	
 	public int deleteRealEstate(int id) {
 		
-		int count = realEstateRepository.deleteReviewById(id);
+		int count = realEstateRepository.deleteRealEstate(id);
 		return count;
 	}
 	
