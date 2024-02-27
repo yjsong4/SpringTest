@@ -21,6 +21,22 @@
  			, #{profileImage}
  		)
  	</insert>
- 
+ 	
+ 	<select id="selectLastSeller"
+ 	resultType="com.syj.spring.test.jsp.domain.Seller">
+ 		SELECT
+ 			`id`
+ 			,`nickname`
+ 			, `temperature`
+ 			, `profileImage`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`seller`
+ 		ORDER BY
+ 			`id` DESC
+ 		LIMIT 
+ 			1
+ 	</select>
  
  </mapper>
