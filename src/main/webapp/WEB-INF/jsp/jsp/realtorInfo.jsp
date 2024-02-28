@@ -1,35 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>°øÀÎÁß°³»ç Á¤º¸</title>
+<title>ê³µì¸ì¤‘ê°œì‚¬ ì •ë³´</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
 	
 	<div class="container">
-		<h2>°øÀÎÁß°³»ç Á¤º¸</h2>
+		<h2>ê³µì¸ì¤‘ê°œì‚¬ ì •ë³´</h2>
 		<table class="table">
 			<tr>
 				<th>id</th>
 				<td>${realtor.id }</td>
 			</tr>
 			<tr>
-				<th>»óÈ£¸í</th>
+				<th>ìƒí˜¸ëª…</th>
 				<td>${realtor.office }</td>
 			</tr>
 			<tr>
-				<th>ÀüÈ­¹øÈ£</th>
+				<th>ì „í™”ë²ˆí˜¸</th>
 				<td>${realtor.phoneNumber }</td>
 			</tr>
 			<tr>
-				<th>ÁÖ¼Ò</th>
+				<th>ì£¼ì†Œ</th>
 				<td>${realtor.address }</td>
 			</tr>
 			<tr>
-				<th>µî±Ş</th>
+				<th>ë“±ê¸‰</th>
 				<td>${realtor.grade }</td>
 			</tr>
 		</table>

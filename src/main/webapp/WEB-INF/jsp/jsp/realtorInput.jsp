@@ -1,26 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>�����߰��� �߰�</title>
+<title>공인중개사 추가</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
 
 	<div class="container">
-		<h2>�����߰��� �߰�</h2>
+		<h2>공인중개사 추가</h2>
 	
 		<form method="get" action="/jsp/realtor/create">
 			<input type="text", class="form-control" name="office">
-			<label>��ȭ��ȣ</label>
+			<label>전화번호</label>
 			<input type="text", class="form-control" name="phoneNumber">
-			<label>�ּ�</label>
+			<label>주소</label>
 			<input type="text", class="form-control" name="address">
-			<label>���</label>
+			<label>등급</label>
 			<input type="text", class="form-control" name="grade">
-			<button type="submit" class="btn btn-primary">�߰�</button>
+			<button type="submit" class="btn btn-primary">추가</button>
 		</form>
 	
 	</div>

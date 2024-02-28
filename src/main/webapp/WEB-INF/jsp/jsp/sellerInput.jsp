@@ -1,21 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>ÆÇ¸ÅÀÚ ÀÔ·Â ÆäÀÌÁö</title>
+<title>íŒë§¤ìž ìž…ë ¥ íŽ˜ì´ì§€</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
 
-	<h2>ÆÇ¸ÅÀÚ Ãß°¡</h2>
+	<h2>íŒë§¤ìž ì¶”ê°€</h2>
 	
 	<form method="post" action="/jsp/seller/create">
-		<label>´Ð³×ÀÓ</label> <input type="text" name="nickname">
-		<label>ÇÁ·ÎÇÊ »çÁø</label> <input type="text" name="profileImage">
-		<label>¿Âµµ</label> <input type="text" name="temperature">
-		<button type="submit">Ãß°¡</button>
+		<label>ë‹‰ë„¤ìž„</label> <input type="text" name="nickname">
+		<label>í”„ë¡œí•„ ì‚¬ì§„</label> <input type="text" name="profileImage">
+		<label>ì˜¨ë„</label> <input type="text" name="temperature">
+		<button type="submit">ì¶”ê°€</button>
 	</form>
 
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
