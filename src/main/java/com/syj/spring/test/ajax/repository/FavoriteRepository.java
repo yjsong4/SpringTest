@@ -10,10 +10,10 @@ import com.syj.spring.test.ajax.domain.Favorite;
 @Mapper
 public interface FavoriteRepository {
 	
+	public List<Favorite> selectFavoriteList();
+
 	public int insertFavorite(
 			@Param("name") String name
 			, @Param("url") String url);
 	
-	public List<Favorite> selectFavoriteList();
-
 }

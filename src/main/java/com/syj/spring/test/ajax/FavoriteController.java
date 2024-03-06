@@ -31,6 +31,12 @@ public class FavoriteController {
 		return "ajax/favorite/list";
 	}
 	
+	@GetMapping("/input")
+	public String inputFavorite() {
+		
+		return "ajax/favorite/input";
+	}
+	
 	@GetMapping("/create")
 	@ResponseBody
 	public Map<String, String> createFavorite(
@@ -48,11 +54,5 @@ public class FavoriteController {
 		
 		return resultMap;
 	}
-	
-	@GetMapping("/input")
-	public String inputFavorite() {
-		return "ajax/favorite/input";
-	}
-	
-
+		
 }
