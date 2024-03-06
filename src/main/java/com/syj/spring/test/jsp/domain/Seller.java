@@ -4,12 +4,19 @@ import java.util.Date;
 
 public class Seller {
 
+	private int id;
 	private String nickname;
 	private double temperature;
 	private String profileImage;
 	private Date createdAt;
 	private Date updatedAt;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getNickname() {
 		return nickname;
 	}

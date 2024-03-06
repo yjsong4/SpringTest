@@ -19,7 +19,7 @@ public class SellerController {
 	@Autowired
 	private SellerService sellerService;
 	
-	@PostMapping("/jsp/seller/create")
+	@PostMapping("/create")
 	@ResponseBody
 	public String createSeller(
 			@RequestParam("nickname") String nickname
@@ -31,19 +31,26 @@ public class SellerController {
 	}
 	
 	@GetMapping("/input")
-	public String InputSeller() {
+	public String inputSeller() {
 		
 		return "jsp/sellerInput";
 	}
 	
 	@GetMapping
-	public String sellerInfo(Model model) {
+	public String sellerInfo(
+			@RequestParam(value="id", required=false) Integer id
+			, Model model) {
 		
-		Seller seller = sellerService.getLastSeller();
-		
-		model.addAttribute("result", seller);
-		model.addAttribute("title", "판매자 정보");
-		
+		Seller seller = null;
+		// id 파라미터가 전달되면 id에 일치하는 판매자 정보 조회
+		if(id != null) {
+			seller = sellerService.getSeller(id);	
+		} else {	// id 파라미터가 전달되지 않으면 가장 최근에 추가된 판매자 정보 조회
+			seller = sellerService.getLastSeller();
+		}
+	
+		model.addAttribute("result", seller); 
+		model.addAttribute("title", "판매자 정보");	
 		return "jsp/sellerInfo";
 	}
 
