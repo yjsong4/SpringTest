@@ -6,7 +6,7 @@
  <mapper namespace="com.syj.spring.test.ajax.repository.FavoriteRepository">
  
  	<select id="selectFavoriteList"
- 	resultType="com.syj.spring.test.ajax.domain.favorite">
+ 	resultType="com.syj.spring.test.ajax.domain.Favorite">
  		SELECT
  			`id`
  			,`name`
@@ -18,5 +18,20 @@
  		ORDER BY
  			`id` DESC
  	</select>
+ 	
+ 	<insert id="insertFavorite"
+ 	parameterType="map">
+ 		INSERT INTO
+ 			`favorite`
+ 		(
+ 			`name`
+ 			, `url`
+ 		)
+ 		VALUE
+ 		(
+ 			#{name}
+ 			, #{url}
+ 		)
+ 	</insert>
 
  </mapper>
