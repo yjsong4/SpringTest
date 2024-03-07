@@ -54,5 +54,30 @@ public class FavoriteController {
 		
 		return resultMap;
 	}
+	
+	@GetMapping("/duplicate-url")
+	@ResponseBody
+	public Map<String, Boolean> isDuplicateUrl(@RequestParam("url") String url) {
 		
+//		boolean isDuplicate = favoriteService.isDuplicateUrl(url);
+		
+		Map<String, Boolean> resultMap = new HashMap<>();
+		
+//		if(isDuplicate) {
+//			resultMap.put("isDuplicate", true);
+//		} else {
+//			resultMap.put("isDuplicate", false);
+//		}
+		
+//		resultMap.put("isDuplicate", isDuplicate);
+		resultMap.put("isDuplicate", favoriteService.isDuplicateUrl(url));
+		
+		return resultMap;
+	}
+	
+	@GetMapping("/delete")
+	public deleteFavorite(@RequestParam("id") int id) {
+		
+	}
+	 
 }

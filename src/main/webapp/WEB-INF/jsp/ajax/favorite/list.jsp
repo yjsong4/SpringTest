@@ -18,6 +18,7 @@
 				<th>No.</th>
 				<th>이름</th>
 				<th>주소</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -26,6 +27,7 @@
 				<td>${favorite.id }</td>
 				<td>${favorite.name }</td>
 				<td>${favorite.url }</td>
+				<td><a href="#"><button class="btn btn-danger btn-sm delete-btn">삭제</button></a></td>
 			</tr>
 			</c:forEach>
 		</tbody>

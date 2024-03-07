@@ -16,4 +16,6 @@ public interface FavoriteRepository {
 			@Param("name") String name
 			, @Param("url") String url);
 	
+	public int selectCountByUrl(@Param("url") String url);
+	
 }
