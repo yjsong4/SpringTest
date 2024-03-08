@@ -1,10 +1,14 @@
 package com.syj.spring.test.ajax.domain;
 
+import java.util.Date;
+
 public class Favorite {
 	
 	private int id;
 	private String name;
 	private String url;
+	private Date createdAt;
+	private Date updatedAt;
 	
 	public int getId() {
 		return id;
@@ -23,6 +27,18 @@ public class Favorite {
 	}
 	public void setUrl(String url) {
 		this.url = url;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 	
 }

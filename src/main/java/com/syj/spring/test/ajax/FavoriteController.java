@@ -76,7 +76,9 @@ public class FavoriteController {
 	}
 	
 	@GetMapping("/delete")
-	public deleteFavorite(@RequestParam("id") int id) {
+	public Map<String, String> deleteFavorite(@RequestParam("id") int id) {
+		
+		
 		
 	}
 	 
