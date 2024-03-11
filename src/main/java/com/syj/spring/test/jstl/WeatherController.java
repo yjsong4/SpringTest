@@ -1,15 +1,13 @@
 package com.syj.spring.test.jstl;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.syj.spring.test.jstl.domain.Weather;
 import com.syj.spring.test.jstl.service.WeatherService;
@@ -40,14 +38,18 @@ public class WeatherController {
 	
 	@GetMapping("/create")
 	public String createWeater(
-			@DateTimeFormat(pattern="yyyy년 M월 d일") @RequestParam("date") Date date // '2024년 3월 21일'
-			, @RequestParam("weather") String weather
-			, @RequestParam("temperatures") double temperatures
-			, @RequestParam("precipitation") double precipitation
-			, @RequestParam("microDust") String microDust
-			, @RequestParam("windSpeed") double windSpeed) {
+//			@DateTimeFormat(pattern="yyyy년 M월 d일") @RequestParam("date") Date date // '2024년 3월 21일'
+//			, @RequestParam("weather") String weather
+//			, @RequestParam("temperatures") double temperatures
+//			, @RequestParam("precipitation") double precipitation
+//			, @RequestParam("microDust") String microDust
+//			, @RequestParam("windSpeed") double windSpeed) {
+			@ModelAttribute Weather weather) {
+				
+//		int count = weatherService.addWeather(date, weather, temperatures, precipitation, microDust, windSpeed);
 		
-		int count = weatherService.addWeather(date, weather, temperatures, precipitation, microDust, windSpeed);
+		int count = weatherService.addWeatherByObject(weather);
+		
 		return "redirect:/jstl/weather/list";
 	}
 	

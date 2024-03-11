@@ -33,5 +33,10 @@ public class WeatherService {
 		int count = weatherRepository.insertWeather(date, weather, temperatures, precipitation, microDust, windSpeed);
 		return count;
 	}
+	
+	public int addWeatherByObject(Weather weather) {
+		int count = weatherRepository.insertWeatherByObject(weather);
+		return count;
+	}
 
 }
