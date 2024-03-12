@@ -13,11 +13,14 @@ public interface BookingRepository {
 	
 	public List<Booking> selectBookingList();
 	
+	public int deleteBooking(@Param("id") int id);
+	
 	public int insertBooking(
 			@Param("name") String name
 			, @Param("headcount") int headcount
 			, @Param("day") int day
 			, @Param("date") Date date
-			, @Param("phoneNumber") String phoneNumber);
+			, @Param("phoneNumber") String phoneNumber
+			, @Param("state") String state);
 	
 }

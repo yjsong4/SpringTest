@@ -33,6 +33,7 @@
  			, `day`
  			, `date`
  			, `phoneNumber`
+ 			, `state`
  		)
  		VALUE
  		(
@@ -41,7 +42,15 @@
  			, #{day}
  			, #{date}
  			, #{phoneNumber}
+ 			, #{state}
  		)  
  	</insert>
+ 	
+ 	<delete id="deleteBooking" parameterType="int">
+ 		DELETE FROM
+ 			`booking`
+ 		WHERE
+ 			`id` = #{id}
+ 	</delete>
 
  </mapper>
