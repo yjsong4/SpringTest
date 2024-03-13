@@ -46,10 +46,16 @@ public class CompanyService {
 	
 	public void deleteCompany(int id) {
 		
+//		companyRepository.deleteById(id);
 		Optional<Company> optionalCompany = companyRepository.findById(id);
-		Company company = optionalCompany.orElse(null);
+//		Company company = optionalCompany.orElse(null);
+//		
+//		if(company != null) {
+//			companyRepository.delete(company);			
+//		}
 		
-		companyRepository.delete(company);
+		// 람다식
+		optionalCompany.ifPresent(company -> companyRepository.delete(company));
 	}
 	
 }
