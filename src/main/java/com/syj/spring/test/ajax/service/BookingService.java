@@ -37,5 +37,12 @@ public class BookingService {
 		int count = bookingrepository.insertBooking(name, headcount, day, date, phoneNumber, "대기중");
 		return count;
 	}
+	
+	// 이름과 전화번호를 전달 받고, 일치하는 예약정보를 돌려주는 기능
+	public Booking searchBooking(String name, String phoneNumber) {
+		
+		Booking booking = bookingrepository.selectBooking(name, phoneNumber);
+		return booking;
+	}
 
 }

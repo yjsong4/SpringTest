@@ -37,7 +37,7 @@ public class RecruitController {
 		
 //		recruitList = recruitrepository.findTop3ByOrderBySalaryDesc("계약직");
 		
-//		recruitList = recruitrepository.findBySalaryBetween(7000, 8000);
+//		recruitList = recruitrepository.findBySalaryBetween(7000, 8500);
 //		recruitList = recruitrepository.findBySalaryGreaterThanAndDeadlineGreaterThan(8100, "2026-04-10");
 //		return recruitList;
 	}

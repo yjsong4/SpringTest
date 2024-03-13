@@ -72,6 +72,7 @@
 				let headcount = $("#headcountInput").val();
 				let phoneNumber = $("#phoneNumberInput").val();
 				
+				// 유효성 검사
 				if(name == "") {
 					alert("이름을 입력하세요");
 					return;
@@ -84,8 +85,19 @@
 					alert("숙박일수를 입력하세요");
 					return;
 				}
+				
+				// 숙박일수가 숫자가 아닌 경우
+				// Not a Number
+				if(isNaN(day)) {
+					alert("숙박일수는 숫자만 입력 가능합니다");
+					return;
+				}
 				if(headcount == "") {
 					alert("숙박인원을 입력하세요");
+					return;
+				}
+				if(isNAN(headcount)) {
+					alert("숙박인원을 숫자만 입력 가능합니다");
 					return;
 				}
 				if(phoneNumber == "") {
@@ -95,23 +107,23 @@
 				
 				$.ajax({
 					type:"post"
-					, url:"/ajax/booking/creat"
-					, data:{"name":name}
-					, success
-					, error
-					
+					, url:"/ajax/booking/create"
+					, data:{"name":name, "date":date, "day":day, "headcount":headcount, "phoneNumber":phoneNumber}
+					, success:function(data) {
+						if(data.result == "success") {
+							location.href = "/ajax/booking/list";
+						} else {
+							alert("예약 실패");
+						}
+					}
+					, error:function() {
+						alert("예약 에러");
+					}
 				});
-
-				
-			});	
-	
 			});
-			
-			
 		});
-	
+		
 	</script>
 	
-
 </body>
 </html>
