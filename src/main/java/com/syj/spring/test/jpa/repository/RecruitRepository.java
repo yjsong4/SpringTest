@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.syj.spring.test.jpa.domain.Recruit;
 
@@ -21,11 +22,17 @@ public interface RecruitRepository extends JpaRepository<Recruit, Integer> {
 	// WHERE `type` = #{} OR `salary` >= #{}
 	public List<Recruit> findByTypeOrSalaryGreaterThanEqual(String type, int salary);
 	
-	public List<Recruit> findTop3ByOrderBySalaryDesc(String type);
+	public List<Recruit> findTop3ByTypeOrderBySalaryDesc(String type);
 	
-	public List<Recruit> findBySalaryBetween(int start, int end);
+	public List<Recruit> findByRegionAndSalaryBetween(String region, int start, int end);
 	
-	@Query(value="SELECT * FROM `recruit` WHERE `type` = :type", nativeQuery=true)
-	public List<Recruit> findBySalaryGreaterThanAndDeadlineGreaterThan(int salary, String deadline);
+	@Query(value="SELECT * FROM `recruit`"
+			+ "WHERE `deadline` > :deadline"
+			+ "AND `salary` >= :salary"
+			+ "AND `type` = :type", nativeQuery=true)
+	public List<Recruit> findByNativeQuery(
+			@Param("deadline") String deadline
+			, @Param("salary") int salary
+			, @Param("type") String type);
 	
 }

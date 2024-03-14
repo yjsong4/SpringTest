@@ -36,7 +36,6 @@ public class Recruit {
 	private String type;
 	private String region;
 	private int salary;
-	private Date deadline;
 	
 	@Column(name="createdAt", updatable=false)
 	@UpdateTimestamp

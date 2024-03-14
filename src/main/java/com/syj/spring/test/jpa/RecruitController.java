@@ -27,19 +27,6 @@ public class RecruitController {
 		Optional<Recruit> optionalRecruit = recruitrepository.findById(8);
 		Recruit recruit = optionalRecruit.orElse(null);
 		return recruit;
-		
-//		List<Recruit> recruitList = null;
-		
-//		recruitList = recruitrepository.findById(8);
-//		recruitList = recruitrepository.findByNativeQuery(3);
-//		List<Recruit> recruitList = recruitrepository.findByPositionAndType("웹 back-end 개발자", "정규직");
-//		recruitList = recruitrepository.findByTypeOrSalaryGreaterThan("정규직", 9000);
-		
-//		recruitList = recruitrepository.findTop3ByOrderBySalaryDesc("계약직");
-		
-//		recruitList = recruitrepository.findBySalaryBetween(7000, 8000);
-//		recruitList = recruitrepository.findBySalaryGreaterThanAndDeadlineGreaterThan(8100, "2026-04-10");
-//		return recruitList;
 	}
 	
 	@GetMapping("/2")
@@ -56,12 +43,12 @@ public class RecruitController {
 		
 		List<Recruit> recruitList = null;
 //		List<Recruit> recruitList = recruitrepository.findByPositionAndType("웹 back-end 개발자", "정규직");
-		recruitList = recruitrepository.findByTypeOrSalaryGreaterThanEqual("정규직", 9000);
+//		recruitList = recruitrepository.findByTypeOrSalaryGreaterThanEqual("정규직", 9000);
+//		recruitList = recruitrepository.findTop3ByTypeOrderBySalaryDesc("계약직");
+//		recruitList = recruitrepository.findByRegionAndSalaryBetween("성남시 분당구", 7000, 8500);
+		recruitList = recruitrepository.findByNativeQuery("2026-04-10 23:59:59", 8100, "정규직");
+		
 		return recruitList;
 	}
 	
-
-	
-	
-
 }
