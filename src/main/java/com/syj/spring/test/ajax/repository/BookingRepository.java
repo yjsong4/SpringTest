@@ -23,4 +23,8 @@ public interface BookingRepository {
 			, @Param("phoneNumber") String phoneNumber
 			, @Param("state") String state);
 	
+	public Booking selectBooking(
+			@Param("name") String name
+			, @Param("phoneNumber") String phoneNumber);
+	
 }

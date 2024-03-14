@@ -84,4 +84,16 @@ public class BookingController {
 		return resultMap;
 	}
 
+	// 예약 조회 API
+	// 이름과 전화번호를 전달 받고, 대응되는 예약 정보를 Response 에 담는다.
+	@GetMapping("/search")
+	@ResponseBody
+	public Booking searchBooking(
+			@RequestParam("name") String name
+			, @RequestParam("phoneNumber") String phoneNumber) {
+		
+		Booking booking = bookingService.searchBooking(name, phoneNumber);
+		return booking;
+	}
+	
 }
